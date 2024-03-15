@@ -32,16 +32,36 @@
 # print(f"Après ==> {a}")
 
 ## Pour les mutables
-liste_a = []
+# liste_a = []
 
-def ajouter_dans_la_liste(element:str):
-    #liste_a = []
-    liste_a.append(element)
-
-
-ajouter_dans_la_liste("element 1")
-ajouter_dans_la_liste("element 2")
-
-print(liste_a)
+# def ajouter_dans_la_liste(element:str):
+#     #liste_a = []
+#     liste_a.append(element)
 
 
+# ajouter_dans_la_liste("element 1")
+# ajouter_dans_la_liste("element 2")
+
+# print(liste_a)
+
+def addition(message, *elements):
+    print(message)
+    total = 0
+    for a in elements:
+        total += a
+    return total
+
+print(addition(1,2,3,4))
+print(addition(1,2,3,4,6,7,8,9,32))
+print(addition(1,2,3))
+
+def avec_kwargs(**kwargs): 
+    print(kwargs)
+
+avec_kwargs(cle1="val1", cle2="val2")
+
+def avec_args_kwargs(*args, **kwargs):
+    print(args)
+    print(kwargs)
+
+avec_args_kwargs(1,3,4,True, "a", cle1="val1", cle2="val2")
